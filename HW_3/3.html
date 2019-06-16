@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var arrLenght = +prompt("Insert the length of the array ");
+
+        var newArray = new Array(arrLenght);
+
+for (i=0; i < newArray.length; i++) {
+    //newArray.push([1,2,3]);
+
+    if(i%2 == 0) {
+      newArray[i] = new Array("even", "even", "even");
+    } else {
+        newArray[i] = new Array("odd", "odd", "odd");
+    }
+}
+
+console.log(newArray);  
+    </script>
+</body>
+</html>

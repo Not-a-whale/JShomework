@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Методы массивов
+        // .split()
+
+        var countries = 'Ukraine, Russia, Belarus'
+
+        var arr = countries.split(', ');
+
+        for (var i = 0; i < arr.length; i++) {
+        alert( 'The countries are ' + arr[i] );
+        }
+
+        // .splice()
+
+        var arr = ["We", "learn", "JavaScript"];
+
+        arr.splice(1, 1); // Удалить 1 элемент, начиная с первой позиции массива
+
+        alert( arr );
+
+        // .slice()
+
+        var arr = ["We", "have", "to", "learn", "JavaScript"];
+
+        var arr2 = arr.slice(1, 3); // копирует часть массива, начиная с 1-го элемента, по второй.
+
+        alert( arr2 ); // have to
+    </script>
+</body>
+</html>

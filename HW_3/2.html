@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var phrase = ['Казнить', ' нельзя', ' помиловать.'];
+    var coma = ',';
+    var number = +prompt('Выберите целое число от 0 до 1');
+    
+    if (number === 0 || number === 1) {
+        phrase.splice(number + 1, 0, coma);
+        document.write('<h1>');
+        for (i=0; i<phrase.length; i++) {
+            document.write(phrase[i]);
+        }
+        document.write('</h1>');
+    } else {
+        document.write('Вы ввели неправильное число или не число.');
+    }
+
+    </script>
+</body>
+</html>

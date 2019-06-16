@@ -1,0 +1,48 @@
+﻿<!-- 
+    1. Сделать собственные примеры методов применяемых для массивов.
+
+    2. Создать программу, выполняющую вставку элемента в массив после элемента, значение которого укажет пользователь.
+
+    3. Создать многомерный массив, размер массива получить от пользователя. Каждый нечётный подмассив заполнить значением 'odd', а чётный - 'even'. Размер каждого вложенного массива - 3.
+
+    4. Создать два произвольных массива: один массив - любимая спортивная команда / модели автомобилей / города, во втором - количество игроков в команде / объем двигателя / количество жителей в городе. Объединить данные из двух массивов и вывести их в одну строку. 
+    
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+      <script> 
+
+      // 3) ------------------------------------------------------------
+
+      var arrLenght = +prompt("Insert the length of the array ");
+
+      var newArray = new Array(arrLenght);
+
+      for (i=0; i < newArray.length; i++) {
+          //newArray.push([1,2,3]);
+
+          if(i%2 == 0) {
+            newArray[i] = new Array("even", "even", "even");
+          } else {
+              newArray[i] = new Array("odd", "odd", "odd");
+          }
+      }
+
+      console.log(newArray);
+      // 4) ------------------------------------------------------------
+
+         var cities = ["London", "Paris", "Moscow", "Madrid", "Washington", "Lagos"];
+         var population = [8.13, 2.14, 11.92, 3.14, .633, 20.1];
+         var citiesPopulation = [];
+         for (var i=0; i<cities.length; i++) {
+             citiesPopulation[i] = [cities[i], population[i]];
+         }
+         console.log(citiesPopulation);
+      </script>
+</head>
+<body>
+</body>
+</html>
