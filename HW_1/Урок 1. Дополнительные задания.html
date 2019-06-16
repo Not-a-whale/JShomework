@@ -1,0 +1,96 @@
+﻿<!-- 
+    1. По координатам двух точек, которые вводит пользователь, определить уравнение прямой, проходящей через эти точки.
+    Общий вид уравнения: y = kx + b; где k = (y1 - y2) / (x1 - x2), b = y2 - k*x2.
+    
+    2. Обменять значения двух переменных, используя третью (буферную) переменную.
+    
+    3. Объявите две переменные: admin и name. Запишите в name строку "Василий". Замените значение из name в admin. Выведите admin.
+    
+    4. Получить от пользователя данные о пользователе: имя, фамилию, возраст. Обработать их и вывести на экран.
+    
+    5. Запросите у пользователя его возраст, после чего выведите на экран модальное окно с вопросом: "Ваш возраст ...(введеное пользователем число) лет?". Далее в зависимости от выбора пользователя выводится модальное окно с информацией true или false.
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var x1;
+        var x2; 
+        var y1;
+        var y2;
+        var k;
+        var y;
+        var b;
+        var x = 'x';
+
+        x1 = prompt('Input x1 coordinate');
+        x2 = prompt('Input X2 coordinate');
+        y1 = prompt('Input y1 coordinate');
+        y2 = prompt('Input y2 coordinate');
+
+        k = (y1 - y2) / (x1 - x2);
+        b = y2 - k*x2;
+        y = k+x + ' + ' + b;
+
+        console.log(y);
+
+        //----------------------------------------------------------//
+        var a;
+        var b;
+        var c;
+
+        a = prompt("input a");
+        b = prompt("input b");
+
+        c = a;
+        a = b;
+        b = c;
+
+        //---------------------------------------------------------//
+
+        var admin;
+        var name = 'Vasily';
+
+        admin = name;
+        console.log(name);
+
+        //----------------------------------------------------------//
+
+        var firstName;
+        var lastName;
+        var age; 
+        
+        var firstName = prompt('Enter your first name ');
+        var lastName = prompt ('Enter your last name ');
+        var age = prompt('What is your age? ');
+
+        var credentials;
+
+        var credentials = alert('So, your name is ' + firstName + ' ' + lastName + ' and you are ' + age + ' years old?');
+
+
+        //--------------------------------------------------------------//
+
+        var age;
+        var yes = 'yes';
+        var answer;
+        
+        age1 = prompt('What is your age?');
+        answer = prompt("So you are " + age + " years old? (yes/no)");
+
+        alert(answer == yes);
+
+
+
+        
+    </script> 
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+</ul>
+</body>
+</html>
