@@ -13,17 +13,15 @@
 
         var newArray = new Array(arrLenght);
 
-for (i=0; i < newArray.length; i++) {
-    //newArray.push([1,2,3]);
-
-    if(i%2 == 0) {
-      newArray[i] = new Array("even", "even", "even");
-    } else {
-        newArray[i] = new Array("odd", "odd", "odd");
+    for (i=0; i < newArray.length; i++) {
+        if(i%2 == 0) {
+        newArray[i] = new Array("even", "even", "even");
+        } else {
+            newArray[i] = new Array("odd", "odd", "odd");
+        }
     }
-}
 
-console.log(newArray);  
+    console.log(newArray);  
     </script>
 </body>
 </html>
