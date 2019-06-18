@@ -110,6 +110,7 @@
                 var nameB = b.name.toUpperCase();
                 if (nameA > nameB) return 1;
                 if (nameA < nameB) return -1;
+                return 0;
             }
 
             employees.sort(compareName);
@@ -121,6 +122,7 @@
                 var nameB = b.sName.toUpperCase();
                 if (nameA > nameB) return 1;
                 if (nameA < nameB) return -1;
+                return 0;
             }
 
             employees.sort(comparesName);
@@ -133,6 +135,7 @@
             function compareAge (a, b) {
                 if (a.age < b.age) return 1;
                 if (a.age > b.age) return -1;
+                return 0;
             }
 
             employees.sort(compareAge);
@@ -147,6 +150,7 @@
                 var nameB = b.occupation.toUpperCase();
                 if (nameA > nameB) return 1;
                 if (nameA < nameB) return -1;
+                return 0;
             }
 
             employees.sort(compareOccupation);
@@ -158,6 +162,7 @@
             function compareSalary (a, b) {
                 if (a.salary < b.salary) return 1;
                 if (a.salary > b.salary) return -1;
+                return 0;
             }
 
             employees.sort(compareSalary);
