@@ -105,7 +105,7 @@
         for (i = 0; i<employees.length; i++) {
             if (employees[i].hasOwnProperty(sortedElement))
             {
-                if (typeof(sortedElement) == 'string') {
+                if (typeof(employees[i][sortedElement]) == 'string') {
                 function compareString (a, b) {
                     var nameA = a[sortedElement].toUpperCase();
                     var nameB = b[sortedElement].toUpperCase();
@@ -117,8 +117,8 @@
                 return (employees);
             } else {
                 function compareNumber (a, b) {
-                    if (a[sortedElement] < b[sortedElement]) return 1;
-                    if (a[sortedElement] > b[sortedElement]) return -1;
+                    if (a[sortedElement] > b[sortedElement]) return 1;
+                    if (a[sortedElement] < b[sortedElement]) return -1;
                     return 0;
                 }
                 employees.sort(compareNumber);
