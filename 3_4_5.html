@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 3, 4, 5</title>
+</head>
+<body>
+
+
+    <script>
+/*             3. Создать массив, который будет хранить в себе информацию о сотрудниках предприятия. Каждый элемент масива — объект,
+       содержащий свойства: name, sName, age, occupation, и метод show, который выводит всю информацию о пользователе.
+       Реализовать заполнение массива пользователем. По окончанию заполнения — вывести информацию о сотрудниках.
+    
+    4. Для предыдущего задания создайте функцию, которая будет принимать в себя массив объектов-сотрудников, и каждому из объектов
+       будет добавлять новое свойство "salary", хранящее зарплату сотрудника. 
+       Зарплата расчитывается, исходя из значения свойства "occupation" следующим образом:
+           • "director" — 3000;
+           • "manager" — 1500;
+           • "programmer" — 2000;
+           • для остальных значений — 1000.
+       После выполнения функции — вывести информацию о сотрудниках.
+           
+    5. Для задания 3 создать метод, позволяющий отсортировать массив сотрудников по одному из свойств: name, sName, age, occupation, salary.
+       Параметр для сортировки принимается от пользователя.
+       После выполнения функции — вывести информацию о сотрудниках. */
+    // 3
+       var employees = [];
+       function Employee (name, sName, age, occupation) {
+           this.name = name; 
+           this.sName = sName;
+           this.age = age; 
+           this.occupation = occupation;
+           this.show = function () {
+                console.log(this.name + ' ' + this.sName + ' is ' 
+                + this.age + ' years old, ' + 'and he/she is a ' + this.occupation);
+           }
+       } 
+       function createNewEmployee () {
+            var anotherEmployee; 
+            for (i = 0; i < Infinity; i++) {
+                var newEmployee = new Employee (prompt('First Name: '), prompt('Last Name: '), +prompt('Age: '),
+                prompt('Job title(occupation): '));
+                if (isNaN(newEmployee.age)) {
+                    alert('Age is a number! Try again!');
+                } else {
+                    employees.push(newEmployee);
+                }
+                anotherEmployee = prompt('Add another employee? (y/n)');
+                if (anotherEmployee == 'n') { 
+                    for (i = 0; i < employees.length; i++) {
+                        employees[i].show();
+                    }
+                    break;
+                }
+            }
+       }
+       createNewEmployee();
+       // 4 
+       function addSalary (employees) {
+           for (i = 0; i < employees.length; i++) {
+                switch (employees[i].occupation) {
+                    case 'director': 
+                        employees[i].salary = 3000;
+                        break;
+                    case 'manager': 
+                        employees[i].salary = 1500;
+                        break;
+                    case 'programmer': 
+                        employees[i].salary = 2000;
+                        break;
+                    default: 
+                        employees[i].salary = 1000;
+                        break;
+                }
+           }
+           for (i = 0; i < employees.length; i++) {
+                employees[i].show = function () {
+                    console.log(this.name + ' ' + this.sName + ' is ' 
+                + this.age + ' years old, ' + 'and he/she is a ' + this.occupation + '.' + ' ' + 'His/Her salary is ' + this.salary + '$');
+                }
+                employees[i].show();
+            }
+       }
+       addSalary(employees);
+    // 5  
+    function employeeSorting () {
+        var sortedElement = prompt('What parameter should be used for sorting? (options: name, sName, age, occupation, salary)');
+        if (sortedElement == 'name')
+        {
+            function compareName (a, b) {
+                var nameA = a.name.toUpperCase();
+                var nameB = b.name.toUpperCase();
+                if (nameA > nameB) return 1;
+                if (nameA < nameB) return -1;
+            }
+            employees.sort(compareName);
+            return (employees);
+        }   if (sortedElement == 'sName')   {
+            function comparesName (a, b) {
+                var nameA = a.sName.toUpperCase();
+                var nameB = b.sName.toUpperCase();
+                if (nameA > nameB) return 1;
+                if (nameA < nameB) return -1;
+            }
+            employees.sort(comparesName);
+            return (employees);
+        }
+        if (sortedElement == 'age')
+        {
+            function compareAge (a, b) {
+                if (a.age < b.age) return 1;
+                if (a.age > b.age) return -1;
+            }
+            employees.sort(compareAge);
+            return (employees);
+        }
+        if (sortedElement == 'occupation')
+        {
+            function compareOccupation (a, b) {
+                var nameA = a.occupation.toUpperCase();
+                var nameB = b.occupation.toUpperCase();
+                if (nameA > nameB) return 1;
+                if (nameA < nameB) return -1;
+            }
+            employees.sort(compareOccupation);
+            return (employees);
+        }
+        if (sortedElement == 'salary')
+        {
+            function compareSalary (a, b) {
+                if (a.salary < b.salary) return 1;
+                if (a.salary > b.salary) return -1;
+            }
+            employees.sort(compareSalary);
+            return employees;
+        } else {
+            alert('You have entered an invalid parameter, please try again');
+            var sortedElement = prompt('What parameter should be used for sorting? (options: name, sName, age, occupation, salary)');
+        }
+    } 
+    employeeSorting(employees);
+    employees.forEach(function(element) {
+        element.show();
+    })
+    </script>
+</body>
+</html> 
