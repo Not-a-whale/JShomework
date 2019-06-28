@@ -1,4 +1,5 @@
-<!-- 1. Создать функцию calculate(operand1, operand2, sign), где operand1 и operand2 — два числа, sign — знак арифметической операции.
+<!-- 1. Создать функцию calculate(operand1, operand2, sign), где operand1 и operand2 — два числа, 
+    sign — знак арифметической операции.
 Функция должна расчитывать результат операции, исходя из переданного ей знака. 
 Функция должна проверять корректность введенных чисел и знака операции.
 Все аргументы для функции принять от пользователя. -->
@@ -13,7 +14,31 @@
 </head>
 <body>
     <script>
-        alert('Hello world!');
+        function calculate (operand1, operand2, sign) {
+            operand1 = +prompt('Please enter the first number: ');
+            operand2 = +prompt('Please enter the second nunmber: ');
+            sign = prompt('Please enter a mathematical sign (+, -. /, *): ');
+            var result;
+            if (sign !== '+' || sign !== '-' || sign !== '/' || sign !== '*')
+                {
+                    alert('Please enter a valid math sign (+, -, /, *)');
+                    sign = prompt('Please enter a mathematical sign (+, -. /, *): ');
+                }
+            if (sign == '+') {
+                result = operand1 + operand2;
+            }
+            if (sign == '-') {
+                result = operand1 - operand2;
+            }
+            if (sign == '/') {
+                result = operand1 / operand2;
+            }
+            if (sign == '*') {
+                result = operand1 * operand2;
+            }
+            return result;
+        }
+        console.log(calculate());
     </script>
 </body>
 </html>
